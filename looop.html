@@ -8,16 +8,16 @@
 <a href="Home.htm" onmouseover="alert('click to go home')">home</a>
 <a href="Home.htm" onmouseover="">home</a>
 <br/>
+<p id="result"> this text will replace</p>
 <script>
-for (let i = 0; i < 10; i++){
-    document.write(i + '<br/>');
+ document.writeln("gi do")
+var text= "" ;
+for (let i = 0; i < 3; i++){
+    text+="this is the loop number"+ i + "<br/>";
 }
-    document.write("hello");
-    console.log("hello");
+
+    document.getElementById('result').innerHTML = text;
 </script>
-<h1>This is a Heading</h1>
 <p>This is a paragraph.</p>
-<button>Say hello</button>
-<button>Good bye</button>
 </body>
 </html>
