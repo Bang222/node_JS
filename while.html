@@ -6,12 +6,13 @@
 <body>
 <a href="Home.htm" onmouseover="alert('click to go home')">home</a>
 <br/>
-<script>
-    let numbers;
+ <script>
+    const numbers= [1,2,3,4,5,6];
     let total = 0;
     for(let idx in numbers){
-    
+    total+=numbers[idx];
     }
+    document.write("total : "+total);
     let i=0;
     let text = "<br/>";
     while (i < 10) 
