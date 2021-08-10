@@ -1,5 +1,5 @@
 console.log("i am fist");
-setTimeout(() =>{
+setTimeout(() => {
     console.log("I am second");
-},5000);
+}, 500);
 console.log("I am third");
