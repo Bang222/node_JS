@@ -1,0 +1,22 @@
+{
+    "name": "node_js",
+    "version": "1.0.0",
+    "description": "Cloud Computing",
+    "main": "node_sever.js",
+    "scripts": {
+        "start": "node node_sever.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Bang222/node_JS.git"
+    },
+    "keywords": [
+        "Bangdanh"
+    ],
+    "author": "Bangdanh",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Bang222/node_JS/issues"
+    },
+    "homepage": "https://github.com/Bang222/node_JS#readme"
+}
