@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <h1>
+        <%= title %>
+    </h1>
+    <div class="product_detail">
+        <form action='/users/insert' method="POST">
+            <label>Product ID"</label>
+            <input type="text" placeholder="Enter Product Name" name="nameproduct">
+            <label>Product Name"</label>
+            <input type="text" placeholder="Enter Product ID" name="idproduct">
+            <label>Product Cost</label>
+            <input type="text" placeholder="Enter Product Cost" name="costp">
+            <button type="Submit"> Submit</button>
+        </form>
+    </div>
+</body>
+
+</html>

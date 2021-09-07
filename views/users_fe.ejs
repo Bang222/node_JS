@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <h1>
+        <%= h1_title %>
+    </h1>
+    <h2>
+        <%= h2_title %>
+    </h2>
+    <%
+    // Display data table by JavaS
+    
+    if(userData.rowCount == 0)
+    {
+        %>
+        <p> No data Found</p>
+        <%
+    }else
+    {
+        // Display header
+     %>
+            <table border="1">
+                <tr>
+                    <th>Produce Name</th>
+                    <th>ID Product</th>
+                    <th>Price</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+                <%
+        //Display all rows , Object data : userData
+        // all rows: user.rows , list array[...]
+        userData.rows.forEach(function(row){
+            //Display a row
+            console.log(row);
+            %>
+                    <tr>
+                        <td>
+                            <%= row.nameproduct %>
+                        </td>
+                        <td>
+                            <%= row.idproduct %>
+                        </td>
+                        <td>
+                            <%= row.costp %>
+                        </td>
+                        <td>
+                            <a href='users/Edit/<%=row.nameproduct%>'>Edit</a>
+                        </td>
+                        <td>
+                            <a href='users/Delete/<%=row.nameproduct%>'>Delete </a>
+                        </td>
+                    </tr>
+                    <%
+                      });
+                    %>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><a href='users/insert'>Insert</a> </td>
+                            <td></td>
+                        </tr>
+            </table>
+            <%
+                    }
+                     %>
+
+</body>
+
+</html>

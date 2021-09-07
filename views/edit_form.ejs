@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <h1>
+        <%= title %>
+            <div class="product_detail">
+                <form action="<%'/users/edit' +edit_data.nameproduct %> " method="POST">
+                    <label>Product Name"</label>
+                    <input type="text" placeholder="Enter Product Name" name="nameproduct" required value="<%= edit_data.nameproduct %>">
+                    <label>Product ID</label>
+                    <input type="text" placeholder="Enter Product ID" name="idproduct" required value="<%= edit_data.idproduct %>">
+                    <label>Product Cost</label>
+                    <input type="text" placeholder="Enter Product Cost" name="costp" required value="<%= edit_data.costp %>">
+                    <button type="Submit">Submit</button>
+                </form>
+            </div>
+    </h1>
+</body>
+
+</html>
