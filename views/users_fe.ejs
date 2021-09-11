@@ -5,75 +5,206 @@
     <title>
         <%= title %>
     </title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>study English</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./stylesheets/index.css">
+    <link rel="stylesheet" href="./stylesheets/base.css">
 </head>
 
 <body>
-    <h1>
-        <%= h1_title %>
-    </h1>
-    <h2>
-        <%= h2_title %>
-    </h2>
-    <%
+    <div class="app">
+        <div class="header">
+            <nav class="headerNavbar">
+                <ul class="item">
+                    <li class="information information--nau"><a href="https://www.facebook.com/zeusoc/">Helper</a>
+                        <i class="fas fa-bell"></i>
+                    </li>
+                    <li class="information"><a href="https://www.facebook.com">Conect</a>
+                        <i class="fab fa-facebook"></i>
+                        <i class="fab fa-instagram"></i>
+                    </li>
+                </ul>
+
+                <ul class="item">
+                    <li class="information information--click"> <a href="" class="information-item-link"> 
+                              Stories
+                              <i class="far fa-address-book"></i>
+                              </a>
+                        <div class="Story">
+                            <header class="story_header">
+                                <h3>Includes the most recent stories</h3>
+                            </header>
+                            <ul class="story_list">
+                                <li class="list_item">
+                                    <a href="header_notify_link" class="header_notify_item">
+                                        <img src="./images/Goden.jpg" alt="Picture" class="header_Story_img">
+                                        <div class="header_story_info">
+                                            <span class="hearder_story_name">Stories about mermaids and 7 dwarfs </span>
+                                            <span class="describe">The story is about 7 dwarfs who love 1 mermaid...</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="list_item">
+                                    <a href="header_notify_link" class="header_notify_item">
+                                        <img src="/images/Cat.jpg" alt="Picture" class="header_Story_img">
+                                        <div class="header_story_info">
+                                            <span class="hearder_story_name">Mermaid story </span>
+                                            <span class="describe">The story is about a mermaid who ishes away and meets a prince</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="list_item">
+                                    <a href="header_notify_link" class="header_notify_item">
+                                        <img src="./img/tamcam.jpg" alt="Picture" class="header_Story_img">
+                                        <div class="header_story_info">
+                                            <span class="hearder_story_name">Stories Tam And Cam </span>
+                                            <span class="describe"> this story reflects the conflicts in the family, 
+                                                                   the struggle between and the good overcomes the evil of the 
+                                                                   Vietnamese people.</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="list_item">
+                                    <a href="header_notify_link" class="header_notify_item">
+                                        <img src="./img/m_1813217674_cay-tre-tram-dot.jpg" alt="Picture" class="header_Story_img">
+                                        <div class="header_story_info">
+                                            <span class="hearder_story_name">Fairy tale bamboo tree hundred burning </span>
+                                            <span class="describe">The story is about an oppressed poor farmer</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                            <footer class="story_showmore">
+                                <a href="" class="story_more">Show all</a>
+                            </footer>
+                        </div>
+                    </li>
+                    <li class="information"> <a href="" class="information-item-link"> 
+                              Vovabulary
+                              <i class="fab fa-alipay"></i>
+                        </a></li>
+                    <li class="information information--strong information--nau"><a href="signUp.html">Sign up</a>
+                        <li class="information information--strong"><a href="/">Log out</a>
+                </ul>
+            </nav>
+            <div class="search">
+                <H1>Search</H1>
+                <div class="content_search">
+                    <input type="text" class="header_search_input" placeholder="You can search for Product">
+                </div>
+                <i class="search_icon fas fa-atlas"></i>
+            </div>
+            <h1 style="font-size: 35; color: chocolate;text-align: center; font-size: 55px; margin-top: 40px;">
+                DATA BASE
+                <%= title %>
+            </h1>
+            <%
     // Display data table by JavaS
     
     if(userData.rowCount == 0)
     {
         %>
-        <p> No data Found</p>
-        <%
+                <p> No data Found</p>
+                <%
     }else
     {
         // Display header
      %>
-            <table border="1">
-                <tr>
-                    <th>Produce Name</th>
-                    <th>ID Product</th>
-                    <th>Price</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
-                </tr>
-                <%
-        //Display all rows , Object data : userData
-        // all rows: user.rows , list array[...]
-        userData.rows.forEach(function(row){
-            //Display a row
-            console.log(row);
+                    <table border="1" style="width: 100%; color: black;">
+                        <tr>
+                            <th>ID Product</th>
+                            <th>Produce Name</th>
+                            <th>Price</th>
+                            <th>amount</th>
+                            <th>Shop name</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                        <%
+                // Display all rows , Object data : userData
+                //all rows: userData.rows, list array [...]
+                userData.rows.forEach(function(row) {
+                  //Display a row
+                  console.log(row);
             %>
-                    <tr>
-                        <td>
-                            <%= row.nameproduct %>
-                        </td>
-                        <td>
-                            <%= row.idproduct %>
-                        </td>
-                        <td>
-                            <%= row.costp %>
-                        </td>
-                        <td>
-                            <a href='users/Edit/<%=row.nameproduct%>'>Edit</a>
-                        </td>
-                        <td>
-                            <a href='users/Delete/<%=row.nameproduct%>'>Delete </a>
-                        </td>
-                    </tr>
-                    <%
+                            <tr>
+                                <td>
+                                    <%= row.idproduct  %>
+                                </td>
+                                <td>
+                                    <%= row.nameproduct %>
+                                </td>
+                                <td>
+                                    <%= row.costp %>
+                                </td>
+                                <td>
+                                    <%= row.amount %>
+                                </td>
+                                <td>
+                                    <%= row.shop_name %>
+                                </td>
+                                <td>
+                                    <a style="color:red;" href='users/Edit/<%=row.idproduct%>'>Edit</a>
+                                </td>
+                                <td>
+                                    <a style="color:red;" href='users/Delete/<%=row.idproduct%>'>Delete </a>
+                                </td>
+
+                            </tr>
+                            <%
                       });
                     %>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><a href='users/insert'>Insert</a> </td>
-                            <td></td>
-                        </tr>
-            </table>
-            <%
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a style="color:red;" href='users/insert'>Insert</a> </td>
+                                    <td></td>
+                                </tr>
+                    </table>
+                    <%
                     }
                      %>
+                        <footer class="footer" style=" 
+                            clear: both;
+                            height: 150px;
+                            margin-top: 200px;
+                        ">
+                            <div class="container">
+                                <div class="rowjustify-content-center">
+                                    <div class="col-sm-4col-md-3item">
+                                        <h3>Services</h3>
+                                        <ul>
+                                            <li><a href="#">Web design</a></li>
+                                            <li><a href="https://www.facebook.com/zeusoc">Development</a></li>
+                                            <li><a href="#">Hosting</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-sm-4 col-md-3 item">
+                                        <h3>About</h3>
+                                        <ul>
+                                            <li><a href="https://www.facebook.com/">Company</a></li>
+                                            <li><a href="https://www.facebook.com/">Team</a></li>
+                                            <li><a href="https://www.facebook.com/">Legacy</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-sm-4 col-md-3 item">
+                                        <h3>Careers</h3>
+                                        <ul>
+                                            <li><a href="https://www.facebook.com/">Job openings</a></li>
+                                            <li><a href="https://www.facebook.com/">Employee success</a></li>
+                                            <li><a href="https://www.facebook.com/">Benefits</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-3 item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a>
+                                        <p class="copyright">Danh Pham Cong Bang</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </footer>
+        </div>
+
 
 </body>
 

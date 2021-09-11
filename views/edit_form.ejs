@@ -9,20 +9,24 @@
 </head>
 
 <body>
-    <h1>
+    <h1 style="text-align: center; margin-bottom: 50px;font-size:55px; color: crimson;">
         <%= title %>
-            <div class="product_detail">
-                <form action="<%'/users/edit' +edit_data.nameproduct %> " method="POST">
-                    <label>Product Name"</label>
-                    <input type="text" placeholder="Enter Product Name" name="nameproduct" required value="<%= edit_data.nameproduct %>">
-                    <label>Product ID</label>
-                    <input type="text" placeholder="Enter Product ID" name="idproduct" required value="<%= edit_data.idproduct %>">
-                    <label>Product Cost</label>
-                    <input type="text" placeholder="Enter Product Cost" name="costp" required value="<%= edit_data.costp %>">
-                    <button type="Submit">Submit</button>
-                </form>
-            </div>
     </h1>
+    <div class="product_detail" style="font-size: 30px;">
+        <form action="<%'/users/edit' +edit_data.idproduct %> " method="POST">
+            <label>Product ID"</label>
+            <input type="text" placeholder="Enter Product Name" name="idproduct" required value="<%= edit_data.idproduct %>">
+            <label>Product name</label>
+            <input type="text" placeholder="Enter Product ID" name="nameproduct" required value="<%= edit_data.nameproduct %>">
+            <label>Product Cost</label>
+            <input type="text" placeholder="Enter Product Cost" name="costp" required value="<%= edit_data.costp %>">
+            <label>Amount</label>
+            <input type="text" placeholder="Enter Product Amount" name="amount" required value="<%= edit_data.amount %>">
+            <label>Shop name</label>
+            <input type="text" placeholder="Enter Product Shop name" name="shop_name" required value="<%= edit_data.shop_name %>">
+            <button type="Submit">Submit</button>
+        </form>
+    </div>
 </body>
 
 </html>

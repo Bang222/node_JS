@@ -9,17 +9,21 @@
 </head>
 
 <body>
-    <h1>
+    <h1 style="text-align: center; margin-bottom: 50px;font-size:55px; color: crimson;">
         <%= title %>
     </h1>
-    <div class="product_detail">
+    <div class="product_detail" style="font-size: 30px;">
         <form action='/users/insert' method="POST">
-            <label>Product ID"</label>
-            <input type="text" placeholder="Enter Product Name" name="nameproduct">
-            <label>Product Name"</label>
+            <label>ID product"</label>
             <input type="text" placeholder="Enter Product ID" name="idproduct">
+            <label> Name Product"</label>
+            <input type="text" placeholder="Enter Product Name" name="nameproduct">
             <label>Product Cost</label>
             <input type="text" placeholder="Enter Product Cost" name="costp">
+            <label>Amount</label>
+            <input type="text" placeholder="Enter Product Amount" name="amount">
+            <label>Shop name</label>
+            <input type="text" placeholder="Enter Product Shop Name" name="shop_name">
             <button type="Submit"> Submit</button>
         </form>
     </div>

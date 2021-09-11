@@ -1,8 +1,8 @@
 var pg_config = require('./pg_config');
-async function authen(user, pass) {
+async function authen1(user, pass) {
     var authenticated = false;
     const acc_query = {
-        text: 'SELECT * FROM account WHERE account_name=$1 AND account_password = $2',
+        text: 'INSERT INTO account VALUES ($1,$2)',
         values: [user, pass]
     };
 
@@ -13,4 +13,4 @@ async function authen(user, pass) {
     console.log(authenticated);
     return authenticated;
 }
-module.exports = authen;
+module.exports = authen1;

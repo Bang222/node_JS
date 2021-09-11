@@ -1,12 +1,12 @@
 var express = require('express');
 var router = express.Router();
 var display_table = require('../modles/tabledisplay');
-var authen = require('../modles/authenticate');
-const Test_User = { username: "guess", password: "guesspass" };
+var authen = require('../modles/authen1');
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-    res.render('login', { message: "Please Input" });
+
+
+router.post('/', function(req, res) {
+    res.render('signup', { message: "Please Input" });
 });
 router.post('/', async function(req, res) {
     var auth = await authen(req.body.username, req.body.password);
