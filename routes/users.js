@@ -4,19 +4,8 @@ var pg_conn = require('../modles/pg_config');
 
 
 /* GET users listing. */
-router.get('/', async function(req, res) {
-    const product_query = {
-        text: 'select * from product',
-        values: []
-    };
-    var data = await pg_conn.query(product_query);
-    res.render('users_fe', {
-        title: "Shop DHCB",
-        h1_title: "Welcome to ATN shop page",
-        h2_title: "Fetch data table by EJS",
-        userData: data
-    });
-
+router.get('/', function(req, res) {
+    res.render('users', { title: "User page", message: "Authorized users" });
 });
 
 router.get('/edit/:name', function(req, res) {
@@ -44,7 +33,12 @@ router.post('/edit/:name', function(req, res) {
         } else {
             var product_query = 'SELECT * FROM product';
             pg_conn.query(product_query, function(err, data) {
-                res.redirect('/users')
+                res.render('users_fe', {
+                    title: "Welcome to ATN shop Page",
+                    h2_title: "Welcome to DPCB shop Page",
+                    h1_title: "Insert query database successfully",
+                    userData: data
+                });
             });
         };
     });
@@ -67,13 +61,12 @@ router.post('/insert', function(req, res) {
                 values: []
             }
             pg_conn.query(product_query, function(err, data) {
-                /*    res.render('users_fe', {
-                        title: "Welcome to ATN shop Page",
-                        h1_title: "Welcome to DPCB shop Page",
-                        h2_title: "Insert query database successfully",
-                        userData: data
-                    }); */
-                res.redirect('/users')
+                res.render('users_fe', {
+                    title: "Welcome to ATN shop Page",
+                    h2_title: "Welcome to DPCB shop Page",
+                    h1_title: "Insert query database successfully",
+                    userData: data
+                });
             });
         };
     });
@@ -91,13 +84,12 @@ router.get('/delete/:name', function(req, res) {
         } else {
             var product_query = 'SELECT * FROM product';
             pg_conn.query(product_query, function(err, data) {
-                /*  res.render('users_fe', {
-                      title: "Welcome to ATN shop Page",
-                      h1_title: "Welcome to DPCB shop Page",
-                      h2_title: "DELETE query database successfully",
-                      userData: data
-                  });*/
-                res.redirect('/users')
+                res.render('users_fe', {
+                    title: "Welcome to ATN shop Page",
+                    h2_title: "Welcome to DPCB shop Page",
+                    h1_title: "DELETE query database successfully",
+                    userData: data
+                });
             });
         };
     });

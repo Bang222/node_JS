@@ -1,0 +1,37 @@
+<%- include('head', { title: 'Authentication Page' }) -%>
+    <!DOCTYPE html>
+    <html>
+
+    <head>
+        <title>sign up</title>
+        <link rel="stylesheet" href="./css/signUp.css">
+    </head>
+
+    <body>
+        <%- message %>
+
+            <div id="id01">
+                <form method="POST" action="/sign_up">
+                    <div class="container">
+                        <h1>Sign Up</h1>
+                        <p>Please fill in this form to create an account.</p>
+                        <hr>
+                        <label for="account"><b>Account Name</b></label>
+                        <input type="text" name="account_name">
+
+                        <label for="psw"><b>Password</b></label>
+                        <input type="password" name="account_password">
+
+                        <label for="psw-repeat">Repeat Password</label>
+                        <input type="password" name="account_password">
+                        <p>
+                            <input type="submit" value="signup">
+                        </p>
+
+                    </div>
+            </div>
+            </form>
+            </div>
+    </body>
+
+    </html>

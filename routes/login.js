@@ -13,7 +13,16 @@ router.post('/', async function(req, res) {
     console.log("check" + auth);
     //if (req.body.Username == Test_User.Username && req.body.Password == Test_User.Password)
     if (auth == true) {
-        res.redirect('users');
+        var pg_conn = require('../modles/pg_config');
+        var product_query = 'SELECT * FROM product';
+        var data = await pg_conn.query(product_query);
+        console.log(data);
+        res.render('users_fe', {
+            title: "Userpage",
+            h1_title: "Welcome to ATN shop page",
+            h2_title: "Fetch data table by EJS",
+            userData: data
+        });
     } else {
         res.render('login', { message: "wrong  users Name or password or shop name . Please input again" });
     };
